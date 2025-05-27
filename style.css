@@ -29,11 +29,12 @@ p {
     height: 36rem;
     width: 21rem;
     background-color: hsla(0, 22%, 93%, 0.487);
-    padding: 2rem 1rem;
-    border-radius: 1rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
 }
 #form {
     height: 100%;
@@ -65,8 +66,10 @@ p {
 }
 #weather_box {
     height: 52%;
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     &>* {
         margin-bottom: 1rem;
     }
@@ -115,7 +118,6 @@ p {
     background-color: hsl(219, 37%, 17%);
 }
 .message {
-    margin-bottom: 2rem;
     color: rgb(255, 1, 69);
     display: none;
 }

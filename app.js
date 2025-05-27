@@ -4,9 +4,9 @@ const input = document.querySelector("#city_input");
 const image = document.querySelector(".weather_image");
 const message = document.querySelector(".message");
 
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    let cityInput = input.value.trim().replace(" ", "");
+form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    let cityInput = input.value.trim();
     
     if (cityInput) {
         try {
@@ -38,8 +38,8 @@ const humidityData = document.querySelector(".humidity_percentage");
 const windData = document.querySelector(".wind");
 
 function displayWeatherData(data) {
-    const weather = {
-        name : city, 
+    const {
+        name, 
         main : { temp, humidity, pressure },
         wind : { speed },
         weather : [{ main, icon }],
@@ -47,11 +47,11 @@ function displayWeatherData(data) {
     } =  data;
 
     // show data to display
-    cityName.textContent =  city;
+    cityName.textContent =  name;
     tempData.textContent =  `${(temp - 273.15).toFixed(1)}°C`;
     weatherName.textContent = main;
-    humidityData.textContent = `${humidity} %`;
-    pressureData.textContent = `${pressure} hPa`;
+    humidityData.textContent = `${humidity}%`;
+    pressureData.textContent = `${pressure}hPa`;
     windData.textContent = `${speed} m/s`;
 
     // weather emoji
@@ -77,4 +77,9 @@ function displayError(err) {
 input.addEventListener("input", () => {
     message.textContent = "";
     message.style.display = "none";
+});
+
+/// refresh
+window.addEventListener("DOMContentLoaded", () => {
+    input.value = "";
 });
