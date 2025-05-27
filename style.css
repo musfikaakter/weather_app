@@ -57,8 +57,7 @@ p {
     &:autofill,  
     &:autofill:hover, 
     &:autofill:focus {
-        -webkit-text-fill-color : #212121;
-        -webkit-box-shadow : hsla(0, 22%, 93%, 0.487);
+        background-color: transparent;
     }
 }
 .btn {
