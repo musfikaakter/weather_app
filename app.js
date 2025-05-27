@@ -43,11 +43,12 @@ function displayWeatherData(data) {
         main : { temp, humidity, pressure },
         wind : { speed },
         weather : [{ main, icon }],
-        timezone : timezone
+        timezone : timezone,
+        sys : { country }
     } =  data;
 
     // show data to display
-    cityName.textContent =  name;
+    cityName.textContent =  `${name}, ${country}`;
     tempData.textContent =  `${(temp - 273.15).toFixed(1)}°C`;
     weatherName.textContent = main;
     humidityData.textContent = `${humidity}%`;

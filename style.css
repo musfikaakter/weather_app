@@ -51,7 +51,15 @@ p {
     font-size: inherit;
     padding: 0.5rem 1rem;
     border: none;
+    border-radius: 5rem;
     outline: none;
+
+    &:autofill,  
+    &:autofill:hover, 
+    &:autofill:focus {
+        -webkit-text-fill-color : #212121;
+        -webkit-box-shadow : hsla(0, 22%, 93%, 0.487);
+    }
 }
 .btn {
     background-color: transparent;
